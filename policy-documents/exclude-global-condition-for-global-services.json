@@ -1,0 +1,26 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "AllowGlobalServiceAccess",
+      "Effect": "Deny",
+      "NotAction": [
+        "cloudfront:*",
+        "route53:*",
+        "globalaccelerator:*",
+        "iam:*",
+        "support:*"
+      ],
+      "Resource": "*",
+      "Condition": {
+        "StringNotEquals": {
+          "aws:RequestedRegion": [
+            "eu-central-1",
+            "eu-west-1",
+            "eu-west-2"
+          ]
+        }
+      }
+    }
+  ]
+}

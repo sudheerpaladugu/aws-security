@@ -1,0 +1,18 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "AllowAssumeRoleWithMFA",
+      "Effect": "Allow",
+      "Principal": {
+        "AWS": "account-id-23412345678"
+      },
+      "Action": "sts:AssumeRole",
+      "Condition": {
+        "Bool": {
+          "aws:MultiFactorAuthPresent": "true"
+        }
+      }
+    }
+  ]
+}

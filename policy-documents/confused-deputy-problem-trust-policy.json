@@ -1,0 +1,16 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "ToAvoidConfusedDeputyProblem",
+      "Effect": "Allow",
+      "Action": "AssumeRole",
+      "Principal": {
+        "AWS": "Third-party-Account-ID"
+      },
+      "Condition": {
+        "StringEquals": {
+          "aws:ExternalId": "89787"
+        }
+      }
+}
